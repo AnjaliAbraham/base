@@ -1,8 +1,0 @@
-       EXEC SQL DECLARE BAD1 TABLE
-
-           (
-           TRANSACTION_ID CHAR(10) NOT NULL,
-           TRANSACTION_DATE DATE NOT NULL,
-           TRANSACTION_USER CHAR(8) NOT NULL
-           )
-           END-EXEC.

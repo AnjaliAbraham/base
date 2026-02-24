@@ -33,7 +33,14 @@ application:
         - name: dependencySearchPath
           value: search:${WORKSPACE}/?path=${APP_DIR_NAME}/src/copy/*.cpy
 
-     
+        # Skip creating a load module for these programs as they will be 
+        # statically linked to other programs
+        - name: doLinkEdit
+          value: false
+          forFiles: 
+             - "**/cobol/cmnp001.cbl"
+             - "**/cobol/cmnp002.cbl"   
+ 
     # Variable overrides for the ScannerInit task
     - task: ScannerInit
       variables:

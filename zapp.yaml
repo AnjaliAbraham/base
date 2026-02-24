@@ -1,0 +1,22 @@
+name: Generated ZAPP document
+description: Some text here
+author:
+  name: IBM CORPORATION
+
+  
+
+profiles:
+  - name: zBuilder-userbuild
+    type: dbb
+    settings:
+      command: "$DBB_HOME/bin/dbb -classpath /u/anjali/logging/ build"
+      lifecycle: user
+      lifecycleArgs:
+        - " --hlq ${dbbHlq}"
+      additionalDependencies:
+        - dbb-app.yaml
+      logFilePatterns:
+        - "base/logs/*.log"
+        - "base/logs/BuildReport.*"  
+        
+  

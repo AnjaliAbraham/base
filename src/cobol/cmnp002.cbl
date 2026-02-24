@@ -1,0 +1,40 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. CMNP002.
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+
+       01  EMPLOYEE-DETAILS.
+           COPY EMPREC.
+
+       01  PAYROLL-DETAILS.
+           COPY PAYREC.
+
+       01  NET-PAY           PIC S9(7)V99.
+
+       PROCEDURE DIVISION.
+
+       MAIN-SECTION.
+
+           MOVE 20001           TO EMP-ID
+           MOVE "JOHN MATHEW"   TO EMP-NAME
+           MOVE "FINANCE"       TO EMP-DEPT
+
+           MOVE 50000.00        TO BASIC-PAY
+           MOVE 5000.00         TO BONUS-AMT
+           MOVE 2000.00         TO DEDUCTIONS
+
+           COMPUTE NET-PAY = BASIC-PAY + BONUS-AMT - DEDUCTIONS
+
+           DISPLAY "EMPLOYEE DETAILS"
+           DISPLAY "ID: " EMP-ID
+           DISPLAY "NAME: " EMP-NAME
+           DISPLAY "DEPT: " EMP-DEPT
+
+           DISPLAY "PAY DETAILS"
+           DISPLAY "BASIC: " BASIC-PAY
+           DISPLAY "BONUS: " BONUS-AMT
+           DISPLAY "DEDUCTIONS: " DEDUCTIONS
+           DISPLAY "NET PAY: " NET-PAY
+
+           STOP RUN.
